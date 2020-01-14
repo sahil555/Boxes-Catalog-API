@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Name: {{ box.name }}</h1>
+
+<p><strong>Author:</strong> <a href="{% url 'author-detail' box.author.pk %}">{{ box.author }}</a></p>
+
+<div style="margin-left:20px;margin-top:20px">
+
+</div>
+{% endblock %}
+

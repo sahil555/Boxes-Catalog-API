@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Home</h1>
+
+<p>Welcome to <em>Boxes Catalog</em>
+
+
+
+<h2>Dynamic content</h2>
+
+<p>The Catalog has the following record counts:</p>
+<ul>
+<li><strong>Boxes:</strong> {{ num_boxes }}</li>
+<li><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+
+
+You have visited this page {{ num_visits }} times.
+
+{% endblock %}

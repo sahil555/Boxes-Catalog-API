@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>All Boxes in Catalog</h1>
+
+    {% if box_list %}
+    <ul>
+
+      {% for box in box_list %} 
+      <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'book-detail' bookinst.book.pk %}">{{ box.name }}  {{ box.author }}</a> 
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no boxs owned.</p>
+    {% endif %}       
+{% endblock %}

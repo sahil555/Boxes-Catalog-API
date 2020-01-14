@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Box List</h1>
+
+    {% if box_list %}
+    <ul>
+
+      {% for box in box_list %}
+      <li>
+        <a href="{{ box.get_absolute_url }}">{{box.name}}</a> ({{box.author}})
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no boxes in the Catalog.</p>
+    {% endif %}       
+{% endblock %}
+

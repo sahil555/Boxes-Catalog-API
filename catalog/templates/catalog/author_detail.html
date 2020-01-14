@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Author: {{ author }} </h1>
+<p>{{author.date_of_birth}}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Boxes</h4>
+
+<dl>
+{% for box in author.box_set.all %}
+  <dt><a href="{% url 'box-detail' box.pk %}">{{box}}</a> ({{box.all.count}})</dt>
+{% endfor %}
+</dl>
+
+</div>
+{% endblock %}
